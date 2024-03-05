@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        echo 'dashboard';
+            return view('admin.dashboard');
     }
 
     public function logout() {

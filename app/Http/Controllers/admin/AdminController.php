@@ -25,7 +25,11 @@ class AdminController extends Controller
             if (Auth::guard('admin')->attempt(['email' => $request->email, 
             'password' => $request->password], $request->get('remember'))) {
                 $admin = Auth::guard('admin')->user();
-                if ($admin->role == 0) {
+                // dd($admin);
+                if ($admin->role == 2) {
+                    // return $admin->role;
+                    // die;
+                    // echo "dashboard";
                     return redirect()->route('admin.dashboard');
                 }else{
                     Auth::guard('admin')->logout();
